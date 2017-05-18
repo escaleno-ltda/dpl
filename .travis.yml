@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker build -t lgatica/dpl:1.8.32 -t lgatica/dpl:latest .
+
+script:
+  - docker run --rm lgatica/dpl:latest dpl --version
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push lgatica/dpl:1.8.32
+  - docker push lgatica/dpl:latest
