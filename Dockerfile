@@ -1,11 +1,11 @@
-FROM alpine:3.6@sha256:d6bfc3baf615dc9618209a8d607ba2a8103d9c8a405b3bd8741d88b4bef36478
+FROM ruby:2.4.2-alpine3.6@sha256:4f4077af3e75fb3b979c4c1f00b8c7da9dbea3e05a888362bde4823f67c4f6d8
 
 LABEL maintainer "Leonardo Gatica <lgatica@protonmail.com>"
 
-ENV DPL_VERSION 1.8.32
+ENV DPL_VERSION 1.8.43
 
-RUN apk add --no-cache ruby ruby-rdoc ruby-irb git curl ca-certificates && \
-    gem install dpl excon multi_json heroku-api rendezvous --no-doc && mkdir -p /usr/src/app
+RUN apk add --no-cache git curl && \
+    gem install dpl:${DPL_VERSION} rendezvous:0.1.2 multipart-post:2.0.0 faraday:0.13.1 --no-doc && mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
