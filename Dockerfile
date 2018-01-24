@@ -1,4 +1,4 @@
-FROM ruby:2.4.3-alpine3.6@sha256:d2b85dc8fdad4be63b6518016fa68eb5caf7bc0769161eb122b2ab4373e56e3a
+FROM ruby:2.4.3-alpine3.6@sha256:01f9581bdfeac4a9bbfe9ad63a311ace80ac74a8d2bdee6495c8465b199774e1
 
 LABEL maintainer "Leonardo Gatica <lgatica@protonmail.com>"
 
