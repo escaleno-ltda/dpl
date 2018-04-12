@@ -5,7 +5,7 @@ services:
   - docker
 
 env:
-  - VERSION=1.8.43
+  - VERSION=1.9.5
 
 install:
   - docker build -t lgatica/dpl:$VERSION -t lgatica/dpl:latest .
